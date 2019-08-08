@@ -1,0 +1,5 @@
+useDynLib(mrfse)
+export(mrfse)
+export(cv.mrfse)
+export(con.mrfse)
+export(ncon.mrfse)
