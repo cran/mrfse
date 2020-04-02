@@ -2,7 +2,9 @@
 #include <math.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <omp.h>
+#ifdef _OPENMP
+  #include <omp.h>
+#endif
 #include "mrfse.h"
 #include "product.h"
 #include "combination.h"

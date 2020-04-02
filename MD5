@@ -1,4 +1,4 @@
-936fe00b0cfd7228b34ff4d57f40ae23 *DESCRIPTION
+16f068bb524170a327c1c37ebb4bce26 *DESCRIPTION
 198cb8b1583202084d7c6fae5d3b8587 *NAMESPACE
 a5383d0c888b591d2301143ca3a84372 *R/main.R
 52ad2a0d5ad4100046422e190c8f1575 *man/con-mrfse.Rd
@@ -11,7 +11,7 @@ a5d93abc8069c6df39b23c561f77ecb0 *man/ncon-mrfse.Rd
 418c00d42eaa702d6fdcfc1dd1e68527 *src/combination.c
 95f907412c5b32b35601b4902512ca0e *src/combination.h
 777b0fc31813b17b1774613599e95f8b *src/main.c
-03702208fea86b18dfca04a4f51726f6 *src/mrfse.c
+bd50a765e70adb222a338fa51a81f9dd *src/mrfse.c
 dd2702905788ff97486d4eb46b2cc515 *src/mrfse.h
 535dffbabd974ca14a14d1a95a15e3d0 *src/product.c
 08998bff8b1cac42b5cc37edc9b38f80 *src/product.h
