@@ -1,5 +1,10 @@
-useDynLib(mrfse)
-export(mrfse)
-export(cv.mrfse)
-export(con.mrfse)
-export(ncon.mrfse)
+useDynLib(mrfse, .registration=TRUE)
+importFrom(Rcpp, evalCpp)
+import(Rfast)
+import(gtools)
+importFrom("stats", "runif")
+importFrom("utils", "combn")
+exportPattern("^mrfse[.]")
+
+
+

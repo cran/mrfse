@@ -8,11 +8,11 @@ typedef struct{
     int k;
     int END;
     int *comb;
-    array* data;
+    array2* data;
 }combination;
 
-combination* combination_init(array* a, int size);
-array* combination_next(combination* c);
+combination* combination_init(array2* a, int size);
+array2* combination_next(combination* c);
 int combination_has_next(combination* c);
 void combination_finish(combination* c);
 #endif

@@ -40,3 +40,13 @@ int **matrixINT(int n, int m) {
     }
     return ptr;    
 }
+
+// float unif() {
+//     // float a = (float) rand() / RAND_MAX;
+//     return a;    
+// }
+
+int int_unif(int n) {
+    int result = (int) floor(unif_rand() * n);
+    return result;
+}

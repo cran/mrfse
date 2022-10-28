@@ -5,13 +5,13 @@
 
 typedef struct{
     int counter;
-    array* pointer;
-    array* A;
+    array2* pointer;
+    array2* A;
     int END;
 }product;
 
-product* product_init(array* a, int repeat);
-array* product_next(product* p);
+product* product_init(int a, int repeat);
+array2* product_next(product* p);
 int product_has_next(product* p);
 void product_finish(product* p);
 

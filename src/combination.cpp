@@ -7,16 +7,17 @@
 
 static combination* malloc_combination();
 
-combination* combination_init(array* a, int size) {
+combination* combination_init(array2* a, int size) {
     combination* c = malloc_combination();
     c->n = a->size;
     c->k = size;
     c->comb = (int*) malloc_int(c->k);
-    c->data = array_copy(a);
-    if (size == 0)
-	c->END = 1;
-    else	    
-	c->END = 0;
+    c->data = array2_copy(a);
+    /* if (size == 0) */
+    /* 	c->END = 1; */
+    /* else	     */
+    /* 	c->END = 0; */
+    c->END = 0;
     for (int i = 0; i < size; i++)
 	c->comb[i] = i;
     
@@ -31,6 +32,8 @@ static int combination_step(combination* c) {
 	i--;
     if (i == 0 && c->comb[i] == n - k)
 	return 0;
+    if (i == -1)
+	return 0;
     c->comb[i]++;
     for (; i < k - 1; i++)
 	c->comb[i + 1] = c->comb[i] + 1;
@@ -39,10 +42,10 @@ static int combination_step(combination* c) {
 
 
 
-array* combination_next(combination* c) {
-    array* result = array_zeros(c->k);
+array2* combination_next(combination* c) {
+    array2* result = array2_zeros(c->k);
     for (int i = 0; i < c->k; i++) {
-	result->array[i] = c->data->array[c->comb[i]];
+	result->array2[i] = c->data->array2[c->comb[i]];
     }
     if(!combination_step(c))
 	c->END = 1;	
@@ -54,7 +57,7 @@ int combination_has_next(combination* c) {
 }
 
 void combination_finish(combination* c) {
-    array_destroy(c->data);
+    array2_destroy(c->data);
     free(c->comb);
     free(c);
     c = NULL;

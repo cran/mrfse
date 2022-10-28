@@ -1,9 +1,9 @@
-\name{con.mrfse}
+\name{mrfse.exact.ncon}
 \encoding{utf-8}
-\alias{con.mrfse}
+\alias{mrfse.exact.ncon}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-  Conservative approach for mrfse
+  Non-conservative approach for Frondana's mrfse
 }
 \description{
   Conservative construction of the estimated Markov random
@@ -11,7 +11,7 @@
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-con.mrfse(a_size, sample, c, max_neigh = NULL)
+mrfse.exact.ncon(a_size, sample, c, max_neigh = ncol(sample) - 1)
 
 }
 %- maybe also 'usage' for other objects documented here.
@@ -29,8 +29,7 @@ con.mrfse(a_size, sample, c, max_neigh = NULL)
 }
   \item{max_neigh}{
     The maximum length of a candidate Markovian neighborhood. Must be
-  non-negative and less than \code{ncol(sample)}. If
-  \code{NULL} then \code{max_neigh} will be set as \code{ncol(sample) - 1}.
+  non-negative and less than \code{ncol(sample)}. 
 }
 }
 \value{
@@ -52,7 +51,7 @@ con.mrfse(a_size, sample, c, max_neigh = NULL)
 library(mrfse)
 a = c(0, 1)
 s = matrix(sample(a, size=1000, replace=TRUE), ncol=5)
-con.mrfse(length(a), s, 1.0)
+mrfse.exact.ncon(length(a), s, 1.0)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

@@ -15,10 +15,11 @@ static int pow2(int a, int b) {
     return result;
 }
 
-product* product_init(array* a, int repeat) {
+product* product_init(int a, int repeat) {
     product* p = malloc_product();
-    p->pointer = array_zeros(repeat);
-    p->A = array_copy(a);
+    p->pointer = array2_zeros(repeat);
+    // printf("AAA = %d\n", a);
+    p->A = array2_arange(a);
     p->counter = 0;
     p->END = pow2(p->A->size, p->pointer->size);
     return p;
@@ -32,30 +33,30 @@ int product_has_next(product* p) {
 
 static void product_step_pointer(product* p) {
     if (p->pointer->size > 0) {
-        p->pointer->array[0]++;
+        p->pointer->array2[0]++;
         for (int i = 0; i < p->pointer->size-1 ; i++)
-            if (p->pointer->array[i] % p->A->size == 0) {
-                p->pointer->array[i] = 0;
-                p->pointer->array[i+1]++;
+            if (p->pointer->array2[i] % p->A->size == 0) {
+                p->pointer->array2[i] = 0;
+                p->pointer->array2[i+1]++;
             } else
                 break;
     }
 }
 
 void product_finish(product* p) {
-    array_destroy(p->A);
-    array_destroy(p->pointer);
+    array2_destroy(p->A);
+    array2_destroy(p->pointer);
     free(p);
     p = NULL;
 }
 
-array* product_next(product* p) {
-    array* result = array_zeros(p->pointer->size);
+array2* product_next(product* p) {
+    array2* result = array2_zeros(p->pointer->size);
     for (int i = 0; i < p->pointer->size; i++)
-        result->array[i] = p->A->array[p->pointer->array[i]];
+        result->array2[i] = p->A->array2[p->pointer->array2[i]];
     product_step_pointer(p);
     p->counter++;
-    array_reverse(result);
+    array2_reverse(result);
     return result;
 }
 

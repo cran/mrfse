@@ -1,15 +1,15 @@
-\name{mrfse.exact}
+\name{mrfse.sa}
 \encoding{utf-8}
-\alias{mrfse.exact}
+\alias{mrfse.sa}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-  A Markov random field structure estimator
+  A Markov random field structure estimator using simulated annealing approach
 }
 \description{
   A penalized likelihood BIC-based to estimate Markovian neighborhoods.
 }
 \usage{
-mrfse.exact(a_size, sample, c, max_neigh= ncol(sample) - 1)
+mrfse.sa(a_size, sample, c, t0, iterations=1000, max_neigh=ncol(sample)-1)
 }
 
 \arguments{
@@ -23,6 +23,13 @@ mrfse.exact(a_size, sample, c, max_neigh= ncol(sample) - 1)
 }
   \item{c}{
     The penalization constant. Must be positive.
+  }
+  \item{t0}{
+    Inital temperature
+  }
+
+  \item{iterations}{
+    Number of simulated annealing iterations
 }
   \item{max_neigh}{
     The maximum length of a candidate Markovian neighborhood. Must be
@@ -49,7 +56,5 @@ mrfse.exact(a_size, sample, c, max_neigh= ncol(sample) - 1)
 library(mrfse)
 a_size = c(0, 1)
 s = matrix(sample(a_size, size=1000, replace=TRUE), ncol=5)
-mrfse.exact(length(a_size), s, 1.0)
+mrfse.sa(length(a_size), s, 1.0, 500, 1000)
 }
-
-
