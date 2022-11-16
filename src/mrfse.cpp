@@ -3,7 +3,9 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <Rcpp.h>
+#ifdef _OPENMP
 #include <omp.h>
+#endif
 #include "mrfse.h"
 #include "product.h"
 #include "combination.h"
@@ -305,8 +307,10 @@ List mrfse(int A, IntegerMatrix sample, double c, int max_degree) {
     vector<vector<int>> aa = permutations(A, 1);
     int n = aa.size();
     vector<vector<int>> result_vect(p);
-    // #pragma omp parallel for shared(mysample, A, c, p, n, max_degree,	\
+    #ifdef _OPENMP
+    #pragma omp parallel for shared(mysample, A, c, p, n, max_degree,	\
     				    result)
+    #endif
     for (int v = 0; v < p; v++) {
 	result_vect[v] = estimate_neighborhood(v);
     }
@@ -330,8 +334,10 @@ List mrfse_sa(int A, IntegerMatrix sample, double c, double t0, int iterations, 
     int n = aa.size();
 
     vector<vector<int>> result_vect(p);
+    #ifdef _OPENMP
     #pragma omp parallel for shared(mysample, A, c, t0, iterations, \
     p, n, max_degree, result)
+    #endif
     for (int v = 0; v < p; v++) {
 	sa_t[v] = t0;
 	result_vect[v] = estimate_neighborhood_sa(v);

@@ -1,4 +1,4 @@
-8250a48e38235030235d8fcf2490ca42 *DESCRIPTION
+611bd02aebca7cd3fd2742f6eececf5b *DESCRIPTION
 57bb4fd0ed719afb33674cddd2fb30a7 *NAMESPACE
 4cec3f6ace1ab0dd9bc03295c4db7d0f *R/RcppExports.R
 e64e6faecf4a0ee80bed79bfb1641aa9 *R/bayes_sample.R
@@ -7,9 +7,9 @@ e64e6faecf4a0ee80bed79bfb1641aa9 *R/bayes_sample.R
 efde4627b8889116c60a987b19eb6450 *man/mrfse_bresler.Rd
 b6c38fd603f794bf6d1fe593de024a4b *man/mrfse_bresler_con.Rd
 de0d7a2d635010c9ad4e854f9c9d1f3f *man/mrfse_bresler_ncon.Rd
-df7a1d10723e5e447a084caf3810f122 *man/mrfse_con.Rd
+48e831b8eb715e371c1ae0d5361c2ea2 *man/mrfse_con.Rd
 436ae0e9663442aaea62fa1a9a615ddb *man/mrfse_create_sampler.Rd
-131162cbe65c04a038d8e7da60b480a7 *man/mrfse_ncon.Rd
+9b85e07a3fff877d4b9f2e6c936efc2c *man/mrfse_ncon.Rd
 b31edd85c77e7bfc21a06c3f4e6777f1 *man/mrfse_sa.Rd
 8adcc15310cce2093e5b95147dbe24ee *man/mrfse_sa_con.Rd
 ac2303c9ca865556bef828e46788fee7 *man/mrfse_sa_ncon.Rd
@@ -20,9 +20,9 @@ be33cb78497f1751bc86c842d97320ee *src/RcppExports.cpp
 7eb0940f1638a16c1c19f8680c9fda36 *src/array.h
 9d76e675498da18fa911933fd7f558e5 *src/combination.cpp
 4e8dfc46c2450123e8aeb6b5eb275ad0 *src/combination.h
-7667417198fcc7ec8000c32469d6f901 *src/mrfse.cpp
+993e947e84ffabd95baefad0251e4fb7 *src/mrfse.cpp
 435db676c6e211a07acf881371cdb948 *src/mrfse.h
-2e2ff7a05c28bbd8232f70686fe55680 *src/mrfse_ci.cpp
+2b1a8d17c0eb1ae0293b841844a7cc64 *src/mrfse_ci.cpp
 f1f89d98c0d414837504392b04216479 *src/mrfse_ci.h
 d3d9bde2f250d4185da4688b19a8c334 *src/product.cpp
 2d333fdd0d338640dc9ac11e5e89ef75 *src/product.h

@@ -8,7 +8,6 @@
 \description{
   Conservative construction of the estimated Markov random
   field graph.
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
 mrfse.exact.con(a_size, sample, c, max_neigh = ncol(sample) - 1)

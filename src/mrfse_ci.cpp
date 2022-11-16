@@ -1,6 +1,8 @@
 #include <Rcpp.h>
 #include <stdlib.h>
+#ifdef _OPENMP
 #include <omp.h>
+#endif
 #include "mrfse.h"
 #include "util.h"
 
@@ -317,8 +319,10 @@ List mrfse_ci(int A, IntegerMatrix sample, double tau, int max_degree) {
     vector<vector<int>> aa = permutations(A, 1);
     int n = aa.size();
     vector<vector<int>> result_vect(p);
+    #ifdef _OPENMP
     #pragma omp parallel for shared(mysample, A, tau, p, n, max_degree,	\
     				    result)
+    #endif
     for (int v = 0; v < p; v++) {
 	result_vect[v] = estimate_neighborhood(v);
     }
