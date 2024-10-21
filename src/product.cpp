@@ -63,7 +63,7 @@ array2* product_next(product* p) {
 static product* malloc_product() {
     product* ptr = (product*) malloc(sizeof(product));
     if (ptr == NULL) {
-        error("malloc returned NULL!\n");
+        perror("malloc returned NULL!\n");
     }
     return ptr;
 }

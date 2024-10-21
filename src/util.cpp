@@ -7,7 +7,7 @@ const double INF = 1.0 / 0.0;
 
 static void check_mcalloc(void *ptr) {
     if (ptr == NULL) {
-	error("malloc/calloc returned NULL!\n");
+	perror("malloc/calloc returned NULL!\n");
     }
 }
 

@@ -20,7 +20,7 @@ combination* combination_init(array2* a, int size) {
     c->END = 0;
     for (int i = 0; i < size; i++)
 	c->comb[i] = i;
-    
+ 
     return c;
 }
 
@@ -37,7 +37,7 @@ static int combination_step(combination* c) {
     c->comb[i]++;
     for (; i < k - 1; i++)
 	c->comb[i + 1] = c->comb[i] + 1;
-    return 1;    
+    return 1;
 }
 
 
@@ -66,7 +66,7 @@ void combination_finish(combination* c) {
 static combination* malloc_combination() {
     combination* ptr = (combination*) malloc(sizeof(combination));
     if (ptr == NULL) {
-        error("malloc returned NULL!\n");
+        perror("malloc returned NULL!\n");
     }
     return ptr;
 }
